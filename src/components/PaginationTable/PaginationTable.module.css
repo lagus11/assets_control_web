@@ -1,0 +1,42 @@
+/* Sección de pagination */
+.pagination {
+    width: 99%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .controls span {
+    padding: 5px 15px;
+    color: white;
+    font-weight: bold;
+    margin: 1px;
+  }
+  
+  .controls span {
+    background-color: #3498DB;
+  }
+  
+  .controls button {
+    color: black;
+    border: 1px solid #c2c2c2;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: white;
+  }
+  
+  .controls button:hover {
+    background-color: #e0e0e0;
+  }
+  
+
+
+/****** VISTA CAMBIA TAMAÑO DE LA TABLA ******/
+@media screen and (max-width: 1180px){
+  /* Sección pagination */
+  .pagination {
+    width: 95%;
+  }
+}

@@ -1,0 +1,250 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/************ Ventana de agregar Equipo ************/
+.modal {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba( 0, 0, 0, 0.5);
+    transition: all 500ms ease;
+    transform: translateY(-30%);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    overflow: scroll;
+    padding: 0;
+}
+
+.modal.isOpen{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0%);
+    animation-name: animationOpen;
+    animation-duration: 500ms;
+}
+
+@keyframes animationOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-30%);
+    }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+    }
+}
+
+.modal.isClose {
+    transform: translateY(0%);
+    animation-name: animationClose;
+    animation-duration: 500ms;
+}
+
+@keyframes animationClose {
+    from {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0%);
+      }
+    to {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-30%);
+      }
+  }
+
+.btn_modal:checked ~ .modal{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal_contenedor {
+    max-width: 800px;
+    width: 45%;
+    max-height: 800px; 
+    min-width: 600px;
+    height: auto;
+    min-height: 400px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 20px;
+    border: 2px solid rgba(128, 128, 128, 0.5);
+    box-shadow: 1px 2px 3px rgba(128, 128, 128, 0.5);
+    border-style: none;
+    transition: all 500ms ease;
+    position: relative;
+}
+
+.modal_cabecero {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 20px 20px 0 0;
+}
+
+.modal_contenedor h1 {
+    text-align: center;
+    padding: 10px;
+}
+
+.flexContenedor {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.flexContenedor div {
+    width: 50%;
+    padding: 0 30px;
+}
+
+.flexContenedor div h2 {
+    text-align: center;
+    background-color: #3498DB;
+    color: white;
+    margin-bottom: 20px;
+    padding: 2px 0;
+}
+
+.subContenedor:first-child {
+    border-right: 1px solid gray;
+}
+
+.subContenedor {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.subContenedor label {
+    margin-top: 4px;
+    font-size: 1.1rem;
+}
+
+.subContenedor input, .subContenedor select {
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+
+
+.formStatus label {
+    margin-top: 4px;
+    font-size: 1.1rem;
+    display: inline-block;
+}
+
+.formStatus input {
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+.formStatus div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+}
+
+.formStatus div span {
+    width: 25px;
+    height: 25px;
+    background-color: #1C851C;
+    margin-left: 6px;
+    cursor: pointer;
+}
+
+
+
+.buttonStatus {
+    height: 40px;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.buttonStatus:hover {
+    box-shadow: 2px 2px 5px gray;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.buttonsPrestamo {
+    background-color: #1C851C;
+    margin-top: 10px;
+}
+
+.buttonsBaja {
+    background-color: #E24646;
+    margin-top: 10px;
+}
+
+.buttonRobado {
+    margin-top: 30px;
+}
+
+.divButton {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.isRequerided::after {
+    content: "*";
+    color: red;
+}
+
+
+@media screen and (max-width: 850px){
+    /*.modal{
+        overflow: scroll;
+    }*/
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    .modal_contenedor {
+        width: 90%;
+        min-width: 300px;
+        overflow: scroll;
+        height: 90%;
+        border-radius: 11px;
+        margin: 0;
+    }
+
+    .modal_cabecero {
+        border-radius: 10px 10px 0 0;
+        position: fixed;
+        width: inherit;
+        border-bottom:  1px solid gray;
+    }
+
+    .flexContenedor {
+        flex-direction: column;
+        margin-top: 40px;
+    }
+
+    .flexContenedor div {
+      width: auto;
+    }
+
+    .flexContenedor div h2:nth-child(1) {
+        margin-top: 25px;
+    }
+
+    .subContenedor:first-child {
+        border-right: none;
+    }
+}
+

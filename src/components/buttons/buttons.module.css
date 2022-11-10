@@ -1,0 +1,96 @@
+.button_back {
+    background-color: #44bd84;
+}
+
+.button_cancel {
+    background-color: #E24646;
+}
+
+.button_desaStat {
+    background-color: #E24646;
+}
+
+.button_download {
+    background-color: #444cbd;
+}
+
+.button_options {
+    background-color: #db9334;
+}
+
+.button_submit {
+    background-color: #3498DB;
+}
+
+.button_tableToExcel {
+    background-color: #178a4b;
+}
+
+.button_updatePdf {
+    background-color: #01A4EF;
+}
+
+.button_back,
+.button_cancel,
+.button_submit {
+    color: white;
+    border-radius: 10px;
+    border-style: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 10px;
+    margin: 20px;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+.button_history {
+    background-color: #3498DB;
+    color: white;
+    border-radius: 10px;
+    border-style: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 5px;
+    margin: 0 0 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button_tableToExcel,
+.button_download,
+.button_options,
+.button_updatePdf,
+.button_desaStat
+ {
+    color: white;
+    border-radius: 10px;
+    border-style: none;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 6px 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button_download {
+    padding: 10px;
+}
+
+.button_back:hover,
+.button_cancel:hover,
+.button_desaStat:hover,
+.button_download:hover,
+.button_history:hover,
+.button_options:hover,
+.button_submit:hover,
+.button_tableToExcel:hover,
+.button_updatePdf:hover {
+    box-shadow: 2px 2px 5px gray;
+    transition: 0.2s;
+}

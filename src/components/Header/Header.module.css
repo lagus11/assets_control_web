@@ -1,0 +1,198 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.menu_bar {
+    display: none;
+}
+
+.header {
+    width: 100%;
+    background-color: #3498DB;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo {
+    color: white;
+    margin-left: 20px;
+}
+
+.header nav {
+    z-index: 1000;
+    width: auto;
+    margin-right: 20px;
+}
+
+.header nav ul {
+    list-style: none;
+}
+
+.header nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+.header nav ul li:hover {
+    background-color: #1a5074;
+    cursor: pointer;
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 7px 12px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.header nav ul li a img {
+    vertical-align: bottom;
+}
+
+.header nav ul li a span {
+    position: relative;
+}
+
+
+.header nav ul li .children {
+    display: none;
+    background-color: #011826;
+    position: absolute;
+    width: 150%;
+    z-index: 1000;
+}
+
+/*usar el hover solo el dispositivos mayores 800 y que no sean dispositivos moviles*/
+@media screen and (min-width: 800px) and (hover:hover) {
+    .header nav ul li:hover .children {
+        display: block;
+    }
+}
+
+.header nav ul li .children li {
+    display: block;
+    overflow: hidden;
+    border-bottom: 1px solid rgb( 255, 255, 255, 0.5);
+}
+
+
+/*
+.header nav ul li .children li a {
+    display: block;
+}
+*/
+
+
+/********** PANTALA  DE  MOVILES **********/
+
+@media screen and (max-width: 800px){
+    .div_header {
+        padding-top: 80px;
+    }
+
+    .titulo {
+        display: block;
+        width: auto;
+        position: fixed;
+        top: 0; 
+        z-index: 1000;
+        height: 55px;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu_bar {
+        display: block;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        background-color: #3498DB;
+    }
+
+    .bt_menu span{
+        cursor: pointer;
+    }
+
+    .menu_bar .bt_menu {
+        display: block;
+        padding: 9px;
+        color: white;
+        overflow: hidden;
+        font-size: 25px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .menu_bar span {
+        float: right;
+        font-size: 30px;
+    }
+
+    .header .menuP_movil_noVer {
+        transition: 0.5s ease-in-out all ;
+        right: 100%;
+    }
+
+    .header .menuP_movil_Ver {
+        transition: 0.5s ease-in-out all ;
+        right: 20%;
+    }
+
+   
+
+    .header nav {
+        width: 80%;
+        height: calc(100% - 87px);
+        position: fixed;
+        top: 57px;
+        margin: 0;
+        overflow: scroll;
+        background-color: #1a5074;
+    }
+
+    .header nav ul li:hover {
+        background-color: #0d2738;
+    }
+
+    /*aqui*/
+ 
+    .header nav ul .watchInput .children {
+        display: block;
+    }
+
+    .header nav ul .noWatchInput .children {
+        display: none;
+    }
+
+    /*a qui*/
+
+   
+    .header nav ul li a {
+        padding: 20px;
+    }
+
+    .header nav ul li {
+        display: block;
+        border-bottom: 1px solid rgba( 255, 255, 255, 0.5);
+    }
+
+    .header nav ul li a span {
+        float: right;
+        top: 3px;
+    }
+
+    .header nav ul li .children {
+        width: 100%;
+        position: relative;
+    }
+
+    .header nav ul li .children li a {
+        margin-left: 20px;
+    }
+}
+
