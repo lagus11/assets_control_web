@@ -9,13 +9,11 @@ export const useFetchDataParams = (uri, isAsset = 0) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortByData, setSortByData] = useState(undefined);
 
-  const fetchAPIData = async ({ limit, skip, search, sort }) => {
+  const fetchAPIData = async () => {
     setLoading(true);
     axiosJWT
       .get(
-        `${uri}/?isAsset=${isAsset}&limit=${limit}&skip=${skip}&search=${search}&sortByid=${
-          sort?.id || ""
-        }&sortByDesc=${sort?.desc || ""}`
+        `${uri}/?isAsset=${isAsset}`
       )
       .then((response) => {
         setDatos(response.data);
@@ -24,37 +22,17 @@ export const useFetchDataParams = (uri, isAsset = 0) => {
       .catch((error) => toast.error(error.response.status));
   };
   const fetchData = useCallback(
-    ({ pageSize, pageIndex }) => {
+    () => {
       const fetchId = ++fetchIdRef.current;
       setLoading(true);
       if (fetchId === fetchIdRef.current) {
-        fetchAPIData({
-          limit: pageSize,
-          skip: pageSize * pageIndex,
-          search: searchTerm,
-          sort: sortByData,
-        });
+        fetchAPIData();
       }
     },
     [searchTerm, sortByData]
   );
 
-  //busqueda global
-  const _handleSearch = _.debounce(
-    (search) => {
-      setSearchTerm(search);
-    },
-    1500,
-    {
-      maxWait: 1500,
-    }
-  );
-
-   //ordenar asc o des
-  const handleSort = (sortBy) => {
-    setSortByData(sortBy[0]);
-  };
-
-  return [_handleSearch, fetchData, datos, loading, handleSort];
+ 
+  return [ fetchData, datos, loading ];
 
 }

@@ -46,7 +46,7 @@ function Table({
       columns: columns,
       data: datos,
       initialState: {
-        pageSize: 5,
+        pageSize: 15,
         pageIndex: 0,
       },
       defaultColumn,

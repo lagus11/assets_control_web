@@ -61,7 +61,7 @@ const DetailsAssignation = ({ actualizarEquipos }) => {
                 if (resSelect.isConfirmed) {
                   const location = resSelect.value;
                   const history = {
-                    idAsset: assignation._id,
+                    idAsset: assignation.idAsset._id,
                     EmployeeNumber: assignation.employeeNumber,
                     fullNameEmployee:
                       assignation.name + " " + assignation.lastname,

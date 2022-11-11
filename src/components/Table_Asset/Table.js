@@ -10,10 +10,10 @@ import {
   useResizeColumns,
 } from "react-table";
 import "./styles.css";
-import { FilterTable } from "./FilterTable/FilterTable";
+import { FilterTable } from "../FilterTable/FilterTable";
 import { ColumnFilter } from "../ColumnFilter/ColumnFilter";
 import { ModalAsset } from "./ModalAsset/ModalAsset";
-import { Pagination } from "./PaginationTable/PaginationTable";
+import { Pagination } from "../PaginationTable/PaginationTable";
 
 import { ViewModalStatus } from "../ViewModalStatus/ViewModalStatus";
 import { toast } from "react-hot-toast";
@@ -41,11 +41,11 @@ function Table({
   datos,
 
   fetchData,
-  pageCount: controlledPageCount,
+  //pageCount: controlledPageCount,
   loading,
-  _handleSearch,
-  total,
-  onSort,
+  //_handleSearch,
+  //total,
+  //onSort,
 
   isAsset,
 }) {
@@ -74,18 +74,17 @@ function Table({
     {
       columns: columns,
       data: datos,
-      manualPagination: true, //<-agregado
-      manualSortBy: true,
+      //manualPagination: true, //<-agregado forma manual
+      //manualSortBy: true,
       initialState: {
         pageSize: 15,
         pageIndex: 0,
       },
-      pageCount: controlledPageCount,
+      //pageCount: controlledPageCount,
       defaultColumn,
       autoResetPage: false,
     },
     useFilters,
-    //useFlexLayout,
     useGlobalFilter,
     useSortBy,
     useResizeColumns,
@@ -109,17 +108,18 @@ function Table({
     prepareRow,
     preGlobalFilteredRows,
     setGlobalFilter,
-    state: { globalFilter, pageIndex, pageSize, sortBy },
+    state: { globalFilter, pageIndex, pageSize /*,sortBy*/ },
   } = table;
 
   //effect para buscar datos primera carga
   useEffect(() => {
-    fetchData && fetchData({ pageIndex, pageSize });
-  }, [fetchData, pageIndex, pageSize]);
+    fetchData && fetchData(/*{ pageIndex, pageSize }*/);
+  }, [/*fetchData, pageIndex, pageSize*/]);
 
+  /*
   useEffect(() => {
     onSort(sortBy);
-  }, [onSort, sortBy]);
+  }, [onSort, sortBy]);*/
 
   //funcion pasar los datos de la tabla a la ventana modal
   const llenarDatosEquipo = (datos) => {
@@ -139,7 +139,7 @@ function Table({
   //obtener los datos actualizados
   async function actualizarEquipos(result) {
     toast.success(result.status);
-    fetchData && fetchData({ pageIndex, pageSize });
+    fetchData && fetchData(/*{ pageIndex, pageSize }*/);
   }
 
   async function messageError(result) {
@@ -240,11 +240,11 @@ function Table({
           preGlobalFilteredRows={preGlobalFilteredRows}
           globalFilter={globalFilter}
           setGlobalFilter={setGlobalFilter}
-          _handleSearch={_handleSearch}
+         // _handleSearch={_handleSearch}
         />
 
         <div className="agregar">
-          <label>Total de Equipos: {total}</label>
+          <label>Total de Equipos: {preGlobalFilteredRows.length}</label>
           {isAsset ? (
             (user.role.type.name !== "user_read" && !!user.role.type.name) &&
               <button onClick={agregar}>

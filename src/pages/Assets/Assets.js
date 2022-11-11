@@ -11,7 +11,7 @@ function Assets() {
 
   const uri = "/equipos/ver_equipos";
   const isAsset = 1;
-  const [_handleSearch, fetchData, datos, loading, handleSort] =
+  const [fetchData, datos, loading] =
     useFetchDataParams(uri, isAsset);
 
   return (
@@ -25,13 +25,13 @@ function Assets() {
             {
               <Table
                 useColumns={useColumns}
-                datos={datos.data || []} //paso los datos llenar la tabla
-                pageCount={datos.page?.paginated || 1}
+                datos={datos || []} //paso los datos llenar la tabla
+                //pageCount={datos.page?.paginated || 1}
                 fetchData={fetchData}
                 loading={loading}
-                _handleSearch={_handleSearch}
-                total={datos.page?.total || 0}
-                onSort={handleSort}
+                //_handleSearch={_handleSearch}
+                //total={datos.page?.total || 0}
+                //onSort={handleSort}
                 isAsset={true} //<-- indicar que mostrare en la tabla los activos
               />
             }

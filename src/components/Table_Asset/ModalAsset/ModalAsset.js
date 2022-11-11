@@ -98,7 +98,6 @@ function ModalAsset({
     closeModal(); //cierra la ventana modal
     setCurrentStep(0); //regresa primera ventana
     setInitialValues(dataAsset); //regresa los valores
-    console.log("regresa a la ventana inicial");
   };
 
   /* obtener tipo de equipo */
@@ -168,7 +167,6 @@ function ModalAsset({
     //Aqui mando los datos a la BD
 
     if (equipo === null) {
-      console.log("addDetails post");
       axiosJWT
         .post(uri.create, details)
         .then((response) => {
@@ -181,7 +179,6 @@ function ModalAsset({
         .catch((error) => {});
     } else {
       if (!details._id) {
-        console.log("segundo if");
         axiosJWT
           .post(uri.create, details)
           .then((response) => {
@@ -193,7 +190,6 @@ function ModalAsset({
           })
           .catch((error) => {});
       } else {
-        console.log("else segundo if");
         axiosJWT
           .put(`${uri.update}/${details._id}`, details)
           .then((response) => {
