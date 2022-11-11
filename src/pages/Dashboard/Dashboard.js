@@ -195,23 +195,6 @@ function Dashboard() {
         </div>
 
         <div className={styles.container_graphic}>
-          <Graphic_bar
-            title={"personas"}
-            labels={["pers1", "pers2", "pers3"]}
-            datas={[575, 725, 212]}
-          />
-        </div>
-
-        <div className={styles.container_graphic}>
-          <Graphic_bar
-            title={"personas"}
-            labels={["pers1", "pers2", "pers3"]}
-            datas={[575, 725, 212]}
-            orientation={"y"}
-          />
-        </div>
-
-        <div className={styles.container_graphic}>
           <Doughnut_graphic
             Pie_chart
             title={"Estatus Activo"}
@@ -226,16 +209,7 @@ function Dashboard() {
             ]}
           />
         </div>
-
-        <div className={styles.container_graphic}>
-          <Graphic_bar
-            title={"personas"}
-            labels={["pers1", "pers2", "pers3"]}
-            datas={[575, 725, 212]}
-          />
-        </div>
       </div>
-     
     </div>
   );
 }

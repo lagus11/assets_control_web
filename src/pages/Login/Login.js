@@ -47,7 +47,7 @@ function Login() {
   // evento presione acceder
   const handlesubmit = (e) => {
     setWait(true);
-    axios.post('/authenticate', auth)
+    axios.post( 'http://ccnayt.dnsalias.com:9102/' + '/authenticate', auth)
     .then((data) => {
       setWait(false);
       //if resultado json ok es true, encontro usuario y accedio, caso contrario manda mensaje error
