@@ -131,7 +131,9 @@ function Table({
           <label>
             Total {title}: {preGlobalFilteredRows.length}
           </label>
-          {(user.role.type.name !== "user_read" && !!user.role.type.name) && (
+          {((user.role.type.name !== "user_read" && 
+             user.role.type.name !== "user_type_equipment") 
+             && !!user.role.type.name) && (
             <button onClick={agregar}>
               <img src={icono_agregar} alt="icono_agregar" />
               &nbsp;Agregar
@@ -225,7 +227,9 @@ function Table({
                             ? //botones
 
                               
-                              (user.role.type.name !== "user_read" && !!user.role.type.name) && (
+                              ((user.role.type.name !== "user_read" &&
+                                user.role.type.name !== "user_type_equipment"
+                              ) && !!user.role.type.name) && (
                                 <div className={styles.contenedor_botones}>
                                   <button
                                     className={styles.button_editar}

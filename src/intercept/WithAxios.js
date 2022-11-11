@@ -2,12 +2,11 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../auth/context/AuthContext";
 import axios from "axios";
 
-
 const axiosJWT = axios.create(
   {
    
     //baseURL: "http://localhost:3000/",
-    /*baseURL: "https://prueba6lagus11.herokuapp.com/",
+    baseURL: "http://ccnayt.dnsalias.com:9101/", /*"https://prueba6lagus11.herokuapp.com/"*/
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
@@ -22,8 +21,8 @@ const axiosJWT = axios.create(
     },*/
   
     
-    //"Accept": "application/json",
-    //"Content-Type": "application/json"
+    "Accept": "application/json",
+    "Content-Type": "application/json"
     
   
   }
