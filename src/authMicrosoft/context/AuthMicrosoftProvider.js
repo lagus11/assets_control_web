@@ -27,7 +27,7 @@ export const AuthMicrosoftProvider = ({ children }) => {
           onMsalInstanceChange(msal);
           const token = {token: "Bearer" + " " + data.idToken.rawIdToken};
           
-          axios.post("http://ccnayt.dnsalias.com:9102/" + "/usuario_autorizado/usuario_autorizado/", token)
+          axios.post("/usuario_autorizado/usuario_autorizado/", token)
             .then((response) => {
               authSuccessful(response.data.token);
             })

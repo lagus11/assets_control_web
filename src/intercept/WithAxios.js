@@ -4,13 +4,13 @@ import axios from "axios";
 
 const axiosJWT = axios.create(
   { 
-    //baseURL: "http://localhost:3000/",
-    baseURL: "http://ccnayt.dnsalias.com:9102/", /*"https://prueba6lagus11.herokuapp.com/" */
+  /*  //baseURL: "http://localhost:3000/",
+    baseURL: "http://ccnayt.dnsalias.com:9102/", /*"https://prueba6lagus11.herokuapp.com/" 
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
       //'Authorization' : ""
-  },
+  },*/
     
    /* headers: {
         
@@ -20,8 +20,8 @@ const axiosJWT = axios.create(
     },*/
   
     
-    "Accept": "application/json",
-    "Content-Type": "application/json"
+    //"Accept": "application/json",
+    //"Content-Type": "application/json"
     
   
   }
